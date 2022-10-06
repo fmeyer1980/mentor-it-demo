@@ -1,0 +1,84 @@
+.intro__inner{
+    @apply aspect-1/1 max-h-full absolute top-0 right-0 flex items-center justify-end text-right pr-800 pl-xl;
+    /* clip-path: ellipse(100% 100% at 100% 0%); */
+    /* animation: buble-one .8s backwards cubic-bezier(0.83, 0, 0.17, 1); */
+}
+
+.intro__text{
+    font-size: clamp(2rem, 6.5vw, 7rem); 
+    animation: text-animation .3s backwards cubic-bezier(0,.1,.05,.99);
+    animation-delay: 1.4s;
+}
+
+.intro__btn{
+    font-size: clamp(.8rem, 2vw, 1.3rem);
+    animation: btn-animation .3s backwards cubic-bezier(0,.1,.05,.99);
+    animation-delay: 1.6s;
+}
+
+
+.bubble-large{
+    @apply absolute -top-full -right-full bg-dark aspect-square w-[200%] rounded-full z-10;
+    animation: puls 6s ease-in-out backwards infinite, bubble-large-ani .8s backwards cubic-bezier(0.83, 0, 0.17, 1) ;
+}
+
+.bubble-small{
+    @apply absolute -top-1/3 right-[70%] bg-primary aspect-square w-[65%] rounded-full z-0;
+    animation: 
+        puls 6s ease-in-out infinite,
+        bubble-small-ani .8s backwards cubic-bezier(0.83, 0, 0.17, 1);
+    animation-delay: .4s;
+
+}
+
+@keyframes puls {
+    0% {
+        transform:scale3d(1,1,1)
+    }
+    50% {
+        transform:scale3d(1.02,1.02,1.02)
+    }
+    100%{
+        transform:scale3d(1,1,1)
+    }
+}
+
+@keyframes bubble-large-ani {
+    from {
+        transform:translate(100%, -100%);
+    }
+    to {
+        transform:translate(0%, 0%);
+    }
+}
+
+@keyframes bubble-small-ani {
+    from {
+        transform:translate(100%, -100%);
+    }
+    to {
+        transform:translate(0%, 0%);
+    }
+}
+
+@keyframes text-animation {
+    from {
+        opacity: 0;
+        transform:translateY(-10%);
+    }
+    to {
+        opacity: 100%;
+        transform:translateY(0);
+    }
+}
+
+@keyframes btn-animation {
+    from {
+        opacity: 0;
+        transform:translateY(10%);
+    }
+    to {
+        opacity: 100%;
+        transform:translateY(0);
+    }
+}

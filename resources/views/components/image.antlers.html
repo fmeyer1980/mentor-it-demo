@@ -1,0 +1,10 @@
+<img 
+    class="w-full {{ class }}"
+    {{ if lazy }}
+        loading="lazy"
+    {{ /if }}
+    width="{{ width or '500' }}"
+    height="{{ height or '500' }}"
+    srcset="{{ glide:imagePath width="{{ width or '200' }}" height="{{ height or '500' }}" quality="80" fit="crop_focal" format="webp" }} 1x, {{ glide:imagePath width="{{ width or '200' }}" height="{{ height or '500' }}" quality="80" fit="crop_focal" format="webp" dpr="2" }} 2x"
+    alt="{{ imagePath:alt }}"
+>

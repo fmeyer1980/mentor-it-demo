@@ -1,0 +1,35 @@
+title: 'Page sections'
+fields:
+  -
+    handle: page_sections
+    field:
+      collapse: accordion
+      previews: true
+      sets:
+        entry_icons:
+          display: 'Entry icons'
+          fields:
+            -
+              import: entry_icons
+        image_text_box:
+          display: 'Image text box'
+          fields:
+            -
+              import: image_text_box
+        testimonial:
+          display: Testimonial
+          fields:
+            -
+              import: testimonial
+        video:
+          display: Video
+          fields:
+            -
+              import: video
+      display: 'Page sections'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false

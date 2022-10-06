@@ -1,0 +1,6 @@
+<{{ as or 'a' }} 
+    class="btn {{ class }}" 
+    data-type="{{ linkType or 'solid-primary' }}" {{ if linkUrl }}
+    href="{{ linkUrl or '/' }}"{{ /if }}>
+    <span>{{ linkText or 'Læs mere' }}</span>  {{ svg src="{{ linkIcon }}" class="h-[.9em] w-auto" aria-hidden="true" }}
+</{{ as or 'a' }}>

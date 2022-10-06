@@ -1,0 +1,19 @@
+<nav>
+    <ul class="font-secondary [&>li>a]:font-bold text-700 space-y-600">
+        {{ nav:collection:pages }}
+            <li class="relative">
+                <a class="flex items-center justify-center space-x-400 {{ is_current || is_parent ?= 'text-primary-glare opacity-100' }}" href="{{ url }}"><span>{{ title }}</span>{{ if children }}{{ svg src="angle-down-solid" class="h-[.8em] translate-y-[.08em]" }}{{ /if }}</a>
+
+                {{ if children }}
+                    <ul class="[&>*]:py-2">
+                        {{ children }}
+                        <li class="text-[.6em]">
+                            <a class="border-b border-transparent {{ is_current ?= 'text-primary !border-primary' }}" href="{{ url }}">{{ title }}</a>
+                        </li>
+                        {{ /children }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav:collection:pages }}
+        </ul>
+</nav>

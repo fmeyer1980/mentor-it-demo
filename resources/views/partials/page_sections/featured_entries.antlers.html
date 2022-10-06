@@ -1,0 +1,25 @@
+<section class="container-wrapper py-lg space-y-gutter {{ class }}">
+    {{ partial:components/section_heading }}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter text-light-glare">
+        {{ entries }}
+            <a href="{{ url }}" class="relative min-h-[23rem] flex items-end p-700 group ">
+                <div class="relative z-20 flow-y flow-space-400 translate-y-700 group-hover:translate-y-0 transition-transform ease-[cubic-bezier(0,.1,.05,.99)] duration-300">
+                    <h3 class="h2">{{ title }}</h3>
+                    {{ page_sections | first }}
+                        <p class="text-xs flex-grow opacity-80 max-w-[50ch] flow-space-200">
+                        {{ if summary }}
+                            {{ summary }}
+                        {{ else }}
+                            {{ main_content | raw | bard_items | where:type:paragraph | bard_text | safe_truncate:120 }}...
+                        {{ /if }}
+                        </p>
+                    {{ /page_sections | first }}
+                    {{ partial:components/btn as="div" linkType="default" linkText="Læs mere om {{ title }}" class=" opacity-0 group-hover:opacity-100 transition-opacity ease-[cubic-bezier(0,.1,.05,.99)] duration-300 !text-primary-glare hover:!text-primary-glare" }}
+                </div>
+                <div class="absolute inset-0 overflow-hidden image-overlay before:bg-dark-shade/0 before:bg-gradient-to-t before:from-dark-shade/90 before:to-dark-shade/20 before:w-full before:z-10 before:h-full before:absolute before:inset-0 group-hover:before:bg-dark-shade/30 before:transition-colors before:duration-300">
+                    <img class="w-full h-full object-cover scale-100 group-hover:scale-125 transition-transform duration-[10s] ease-[cubic-bezier(0,.1,.05,.99)]" src="{{ glide:featured_image w="600" h="300" dpr="2" }}" alt="{{ featured_image:alt }}">
+                </div>
+            </a>
+        {{ /entries }}
+    </div>
+</section>

@@ -1,0 +1,58 @@
+.page-content blockquote {
+  @apply border-l-8 border-primary-glare py-[.7em] pl-[1.8em] text-[1.2em] font-medium italic my-[2em];
+}
+
+/* .page-content > div {
+  --flow-space: 2em;
+}
+
+.page-content div + * {
+  --flow-space: 10em;
+} */
+
+
+.page-content ol,
+.page-content ul {
+  @apply pl-200 text-dark-shade my-[2em];
+}
+
+.page-content hr{
+  @apply w-[15%] h-[3px] bg-primary border-0 !my-[2em]
+}
+
+
+.page-content a {
+  @apply text-primary underline;
+}
+
+.content-title{
+  @apply !text-primary-glare tracking-widest uppercase text-xxs font-semibold
+}
+
+.page-content h2{
+  max-width: 25ch;
+}
+
+.page-content h3{
+  max-width: 35ch;
+}
+
+.page-content .content-title + h2,
+.page-content .content-title + h3,
+.page-content .content-title + h4{
+  --flow-space: 1em;
+ 
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3 {
+  --flow-space: 2em;
+}
+
+.page-content h1 + *,
+.page-content h2 + *,
+.page-content h3 + *,
+.page-content h4 + * {
+  --flow-space: 0.8em;
+}

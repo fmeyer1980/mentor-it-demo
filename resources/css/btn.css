@@ -1,0 +1,47 @@
+.btn {
+  @apply py-[1.2em] px-[2.2em] text-100 font-secondary font-bold inline-flex items-center rounded-full relative leading-none space-x-[.8em] transition-colors justify-center;
+}
+
+.btn[data-type='default'] {
+  @apply p-0 text-primary
+}
+
+.btn[data-type='default']:hover {
+  @apply text-primary-shade
+}
+
+.btn[data-type='solid-primary'] {
+  @apply bg-primary text-dark-shade;
+}
+
+.btn[data-type='solid-primary']:hover {
+  @apply bg-primary-shade;
+}
+
+.btn[data-type='solid-dark'] {
+  @apply bg-dark text-light-glare;
+}
+
+.btn[data-type='solid-light'] {
+  @apply bg-light text-dark-shade;
+}
+
+.btn[data-type='stroke-primary'] {
+  @apply text-primary-glare ring-inset ring-2 ring-primary-glare;
+}
+
+.btn[data-type='stroke-primary']:hover {
+  @apply text-light-glare ring-primary bg-primary;
+}
+
+.btn[data-type='stroke-light'] {
+  @apply text-light-glare ring-inset ring-2 ring-light-glare;
+}
+
+.btn[data-type='stroke-dark'] {
+  @apply text-dark-shade ring-inset ring-2 ring-dark-shade;
+}
+
+.btn[data-type='stroke-dark']:hover {
+  @apply text-light-glare ring-1 ring-dark-shade bg-dark-shade;
+}

@@ -1,0 +1,68 @@
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
+
+
+
+[x-cloak] {
+    display: none !important;
+}
+
+.top-padding{
+    padding-top: calc( theme('spacing.lg') + theme('spacing.xl'));
+}
+
+input[type=text], input[type=email], input[type=tel], textarea{
+    @apply !bg-light border-none ring-dark/5 w-full !py-[1em] !px-[1.2em] !text-xs !font-normal !rounded-sm focus:ring-1 focus:!ring-secondary placeholder:text-dark/70 text-dark
+}
+
+label{
+    @apply text-xxs font-semibold text-dark-glare
+}
+
+
+.accordion-text p:first-child{
+    margin-top: 0!important;
+}
+
+.accordion-text p:last-child{
+     margin-bottom: 0 !important;
+ }
+
+.title{
+    @apply !text-primary tracking-widest uppercase text-xs font-semibold
+}
+
+.prose li p{
+    @apply my-0;
+}
+
+.prose blockquote p {
+    @apply my-0;
+}
+
+a[data-state='active']::after,
+a[aria-current='page']::after {
+    content: '';
+    height: 4px;
+    @apply bg-primary absolute bottom-0 left-0 w-full;
+}
+
+.site-head__dropdown-nav{
+    @apply relative border-0 bg-transparent w-800 h-800 before:w-full before:top-[30%] before:left-0 after:w-2/3 after:bottom-[30%] after:left-0 after:transition-all before:transition-all;
+
+}
+
+.site-head__dropdown-nav::before, .site-head__dropdown-nav::after{
+    @apply h-[11%] rounded-[10px] bg-current absolute;
+}
+
+.is-open{
+    @apply before:rotate-45 before:top-[50%] after:-rotate-45 after:top-[50%] after:w-[80%] before:w-[80%]
+}

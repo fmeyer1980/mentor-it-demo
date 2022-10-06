@@ -1,0 +1,6 @@
+{{ if type == "text" }}
+    {{ glide:batch width="700" quality="80" fit="crop_focal" format="webp" dpr="2" }}
+        {{ text | widont }}
+    {{ /glide:batch }}
+{{ /if }}
+

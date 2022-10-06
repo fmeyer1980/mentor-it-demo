@@ -1,0 +1,58 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: headline
+        field:
+          input_type: text
+          antlers: false
+          display: Headline
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: summary
+        field:
+          antlers: false
+          display: Summary
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  seo:
+    display: Seo
+    fields:
+      -
+        import: meta
+        prefix: meta_

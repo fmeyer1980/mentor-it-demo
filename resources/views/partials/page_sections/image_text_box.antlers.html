@@ -1,0 +1,33 @@
+{{ colors = switch(
+    (color == 'primary') => "bg-primary text-dark-shade",
+    (color == 'dark') => "bg-dark text-light-glare",
+    () => "bg-light"
+)}}
+
+
+<section class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="{{ image_placement == 'left' ? 'lg:order-1' : 'lg:order-2' }}">
+        {{ partial:components/image :imagePath="image" width="600" height="500" lazy="true" class="h-full object-cover" }}
+    </div>
+    <div class="px-gutter pt-800 pb-900 lg:p-lg space-y-400 prose-headings:text-800 prose-headings:max-w-[20ch] flex flex-col justify-center {{ image_placement == 'left' ? 'lg:order-2' : 'lg:order-1' }}  {{ colors }}">
+        {{ text }}
+        <div class="flex flex-wrap gap-300 !mt-700 ">
+            {{ links }}
+            {{ type_link = switch(
+                (color == 'primary' and first == true) => "stroke-dark",
+                (color == 'primary' and first == false) => "solid-dark",
+                (color == 'dark' and first == true) => "stroke-light",
+                (color == 'dark' and first == false) => "solid-primary",
+                (color == 'light' and first == true) => "stroke-dark",
+                (color == 'light' and first == false) => "solid-primary",
+                () => ""
+            )}}
+                {{ partial:components/btn :linkUrl="url" :linkType="type_link" :linkText="text" :linkIcon="icon" class="flex-grow md:flex-grow-0" }}
+            {{ /links }}
+
+            
+        </div>
+    </div>    
+   
+
+</section>

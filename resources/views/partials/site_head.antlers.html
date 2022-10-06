@@ -1,0 +1,22 @@
+<header role="banner" class="mx-gutter md:mx-[5%] py-500 flex gap-gutter items-center justify-end" x-data="{ menuIsOpen: false }" :class="menuIsOpen ? 'text-light' : 'text-current'">
+    <a class="h-full mr-auto z-[99]" href="/" aria-label="Gå til {{ site_settings:name }}">{{ svg src="logo" class="h-800" aria-hidden="true" }}</a>
+    <div class="space-x-400 hidden md:flex">
+        {{ partial:components/btn linkText="IT-outsourcing" linkUrl="/" linkType="stroke-dark" class="text-300 py-[.8em]" }}
+        {{ partial:components/btn linkText="Remote Support" linkUrl="/" linkType="solid-dark" class="text-300 py-[.8em]" }}
+    </div>
+    <a aria-label="Kontakt os på {{ site_settings:phone }}" href="tel:{{ site_settings:phone }}">{{ svg src="phone" class="h-600" }}</a>
+    <button aria-label="Søge knap">{{ svg src="loop" class="h-600" }}</button>
+    <button aria-label="Primære navigation knap" class="site-head__dropdown-nav z-[99]" :class="menuIsOpen ? 'is-open' : ''" @click="menuIsOpen = !menuIsOpen" @keydown.escape="isOpen = false"></button>
+    <div class="fixed inset-0 bg-dark z-50 flex justify-center pt-xxl md:pt-xl text-center" 
+    x-cloak 
+    x-show="menuIsOpen"
+    x-transition:enter="transition ease-out duration-100"
+    x-transition:enter-start="opacity-0 -translate-y-400"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-100"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-400"
+    >
+        {{ partial:main_nav }}
+    </div>
+</header>

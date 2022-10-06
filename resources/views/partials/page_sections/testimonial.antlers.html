@@ -1,0 +1,8 @@
+<section class="relative ">
+    <div class="flex flex-col items-center text-center space-y-300 px-gutter py-lg is bg-white/20 backdrop-blur-md">
+        <b class="text-lg leading-none">{{ number }}%</b>
+        <p class="h3 uppercase">{{ title }}</p>
+        <div class="text-500 max-w-[70ch]">{{ text | widont:3 }}</div>
+    </div>
+    <video loading="lazy" muted="muted" loop="loop" playsinline="" autoplay="true" preload="auto" class="absolute inset-0 w-full h-full object-cover z-[-1]"><source src="{{ video }}" type="video/mp4"></video>
+</section>

@@ -1,0 +1,60 @@
+{{ xlRatio = switch(
+    (xlRatio == true) => xlRatio,
+    (lgRatio == true) => lgRatio,
+    (mdRatio == true) => mdRatio,
+    (smRatio == true) => smRatio,
+    () => ratio
+) }}
+
+{{ lgRatio = switch(
+    (lgRatio == true) => lgRatio,
+    (mdRatio == true) => mdRatio,
+    (smRatio == true) => smRatio,
+    () => ratio
+) }}
+
+{{ mdRatio = switch(
+    (mdRatio == true) => mdRatio,
+    (smRatio == true) => smRatio,
+    () => ratio
+) }}
+
+
+<picture class="{{ class }}">
+
+    <source 
+    width="1536" 
+    height="{{ '1536' | divide:16 | multiply:{{ xlRatio or '9'}} }}" 
+    srcset="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="1536" height="{{ '1536' | divide:16 | multiply:{{ xlRatio or '9'}} }}" }} 1x, {{ glide:imagePath quality="50" fit="crop_focal" format="webp" dpr="2" width="1536" height="{{ '1536' | divide:16 | multiply:{{ xlRatio or '9'}} }}" }} 2x" media="(min-width: 1536px)">
+    
+    <source 
+    width="1280" 
+    height="{{ '1280' | divide:16 | multiply:{{ lgRatio or '9'}} }}" 
+    srcset="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="1280" height="{{ '1280' | divide:16 | multiply:{{ lgRatio or '9'}} }}" }} 1x, {{ glide:imagePath quality="50" fit="crop_focal" format="webp" dpr="2" width="1280" height="{{ '1280' | divide:16 | multiply:{{ lgRatio or '9'}} }}" }} 2x" media="(min-width: 1280px)">
+
+    <source 
+    width="1024" height="{{ '1024' | divide:16 | multiply:{{ mdRatio or '9'}} }}" 
+    srcset="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="1024" height="{{ '1024' | divide:16 | multiply:{{ mdRatio or '9'}} }}" }} 1x, {{ glide:imagePath quality="50" fit="crop_focal" format="webp" dpr="2" width="1024" height="{{ '1024' | divide:16 | multiply:{{ mdRatio or '9'}} }}" }} 2x" media="(min-width: 1024px)">
+
+    <source 
+    width="640" height="{{ '640' | divide:16 | multiply:{{ smRatio ? smRatio : ratio or '9'}} }}" 
+    srcset="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="640" height="{{ '640' | divide:16 | multiply:{{ smRatio ? smRatio : ratio or '9'}} }}" }} 1x, {{ glide:imagePath quality="50" fit="crop_focal" format="webp" dpr="2" width="640" height="{{ '640' | divide:16 | multiply:{{ smRatio ? smRatio : ratio or '9'}} }}" }} 2x" media="(min-width: 640px)">
+
+    <source 
+    width="480" height="{{ '480' | divide:16 | multiply:{{ ratio or '9'}} }}" 
+    srcset="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="480" height="{{ '480' | divide:16 | multiply:{{ ratio or '9'}} }}" }} 1x, {{ glide:imagePath quality="50" fit="crop_focal" format="webp" dpr="2" width="480" height="{{ '480' | divide:16 | multiply:{{ ratio or '9'}} }}" }} 2x">
+
+    <img 
+        class="w-full h-full object-cover"
+        width="480" height="{{ '480' | divide:16 | multiply:{{ ratio or '9'}} }}"
+        {{ if lazy }}
+            loading="lazy"
+        {{ /if }}
+        src="{{ glide:imagePath quality="70" fit="crop_focal" format="webp" width="480" height="{{ '480' | divide:16 | multiply:{{ ratio or '9'}} }}" }}"
+        alt="{{ imagePath:alt }}
+    ">
+</picture>
+
+
+
+

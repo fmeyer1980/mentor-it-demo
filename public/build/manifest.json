@@ -1,0 +1,20 @@
+{
+  "resources/fonts/Dosis-Regular.woff2": {
+    "file": "assets/Dosis-Regular.2371ea0d.woff2",
+    "src": "resources/fonts/Dosis-Regular.woff2"
+  },
+  "resources/fonts/Dosis-Bold.woff2": {
+    "file": "assets/Dosis-Bold.ec5bdad9.woff2",
+    "src": "resources/fonts/Dosis-Bold.woff2"
+  },
+  "resources/js/site.js": {
+    "file": "assets/site.7ab07cc6.js",
+    "src": "resources/js/site.js",
+    "isEntry": true
+  },
+  "resources/css/tailwind.css": {
+    "file": "assets/tailwind.76d6ce5c.css",
+    "src": "resources/css/tailwind.css",
+    "isEntry": true
+  }
+}

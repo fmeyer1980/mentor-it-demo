@@ -1,0 +1,13 @@
+<section class="lg:container-wrapper md:flex text-center lg:text-left">
+    {{ entry_icons }}
+        <a href="{{ link }}" class="group flex items-center justify-center py-800 px-600 lg:py-lg grow hover:bg-dark hover:text-light-glare transition-colors {{ switch between='bg-light-glare | bg-light | bg-light-shade' }}">
+            <div class="flex flex-wrap flex-col lg:flex-row lg:items-center gap-600">
+                {{ svg src="{{ icon }}" class="h-800" }}
+                <div>
+                    <h2 class="uppercase text-500">{{ headline }}</h2>
+                    <p class="font-secondary text-600 flex items-center leading-tight space-x-3"><span>{{ text }}</span>{{ svg src="arrow-right-light" class="h-[.6em] translate-y-[.1em] group-hover:translate-x-2 transition-transform" }}</p>
+                </div>
+            </div>
+        </a>
+    {{ /entry_icons }}
+</section>

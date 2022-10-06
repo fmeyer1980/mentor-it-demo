@@ -1,0 +1,30 @@
+<section class="intro relative xl:h-[55rem] overflow-hidden" aria-describedby="intro_headline">
+    <div class="intro__inner">
+        <div class="relative space-y-600 -translate-y-[10%] z-20">
+            <h1 class="intro__text max-w-[11ch] font-normal text-primary" id="intro_headline">{{ intro_headline }}</h1>
+            {{ intro_links }}
+                {{ partial:components/btn :linkUrl="url" :linkText="text" class="intro__btn" :linkIcon="icon" }}
+            {{ /intro_links }}
+        </div>
+        <div class="bubble-large"></div>
+        <div class="bubble-small"></div>
+    </div>
+
+    {{ partial:components/picture :imagePath="intro_image" ratio="16" smRatio="9" class="w-full h-full" }}
+</section>
+
+
+{{# <section class="intro relative xl:h-[55rem] overflow-hidden" aria-describedby="intro_headline">
+    <div class="intro__inner">
+        <div class="space-y-600 -translate-y-[10%]">
+            <h1 class="intro__text max-w-[11ch] font-normal text-primary" id="intro_headline">{{ intro_headline }}</h1>
+            {{ intro_links }}
+                {{ partial:components/btn :linkUrl="url" :linkText="text" class="intro__btn" :linkIcon="icon" }}
+            {{ /intro_links }}
+        </div>
+        <div class="absolute top-0 bg-dark aspect-square w-[20%] rounded-full"></div>
+        <div class="absolute top-0 right-0 bg-primary aspect-square w-[20%] rounded-full"></div>
+    </div>
+
+    {{ partial:components/picture :imagePath="intro_image" ratio="16" smRatio="9" class="w-full h-full" }}
+</section> #}}

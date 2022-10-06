@@ -1,0 +1,9 @@
+{{ alignment = switch(
+    (text_alignment == 'text-center') => 'text-center items-center',
+    (text_alignment == 'text-right') => 'text-right items-end',
+    () => 'text-left'
+) }}
+
+<header class="space-y-200 flex flex-col {{ alignment }}  prose-headings:max-w-[35ch] prose-p:max-w-[65ch] prose-p:text-dark-shade/80 prose-hr:border-0 prose-hr:h-[2px] prose-hr:bg-primary prose-hr:w-900">
+    {{ section_heading }}
+</header>

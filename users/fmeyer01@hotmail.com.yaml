@@ -1,0 +1,8 @@
+name: 'Flemming Meyer'
+super: true
+id: 0d3f826b-b0b8-4918-b967-0cf5633e3894
+password_hash: $2y$10$sov823gkErzOSEMJ3b4Asu07D7Yh63LNA.pSgMdLse44qcBN2W5XC
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing
