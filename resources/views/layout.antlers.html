@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ partial:meta_info }}
-        <link rel="stylesheet" href="/build/assets/tailwind.76d6ce5c.css" /><script type="module" src="/build/assets/site.7ab07cc6.js"></script>
+        {{ vite src="resources/css/tailwind.css|resources/js/site.js" }}
+        {{# <link rel="stylesheet" href="/build/assets/tailwind.76d6ce5c.css" /><script type="module" src="/build/assets/site.7ab07cc6.js"></script> #}}
     </head>
     <body class="font-base leading-normal text-dark">
         {{ partial:site_head }}

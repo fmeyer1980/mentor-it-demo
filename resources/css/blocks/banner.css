@@ -1,0 +1,12 @@
+.banner{
+    animation: banner-ani .8s backwards cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+@keyframes banner-ani {
+    from {
+        clip-path: ellipse(200% 1% at 50% 0);
+    }
+    to {
+        clip-path: ellipse(80% 100% at 50% 0);
+    }
+}

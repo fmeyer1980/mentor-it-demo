@@ -9,6 +9,7 @@
 @import './page-content';
 
 @import './blocks/intro';
+@import './blocks/banner';
 
 @import './compositions/cluster';
 @import './compositions/switcher';
