@@ -20,6 +20,26 @@
         </main>
         {{ partial:site_foot }}
         {{ partial:newsletter_popup }}
+        <script>
+            function formSetup() {
+                return {
+                    formResult: false,
+                    getResults(formElement) {
+                        let context = this;
+                        let data = new FormData(formElement);
+                        let xhr = new XMLHttpRequest();
+                        xhr.open(formElement.method, formElement.action);
+                        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                        xhr.send(data);
+                        xhr.onload = function() {
+                            if (xhr.readyState === xhr.DONE) {
+                                context.formResult = JSON.parse(xhr.response);
+                            }
+                        };
+                    }
+                };
+            }
+        </script>
         <script src="/js/quicklink.js"></script>
         <script>
             window.addEventListener('load', () => {
