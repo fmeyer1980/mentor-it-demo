@@ -16,7 +16,12 @@ x-transition:leave-end="opacity-0 -translate-y-400"
         </div>
         <div class="p-gutter space-y-600">
             <p class="h4 max-w-[60ch]">Få gode råd og vejledning til strategisk IT og gode IT-oplevelser, som højner brugeroplevelsen og øger sikkerheden. Blot ved at tilmelde dig vores nyhedsbrev.</p>
-            {{ form:create in="newsletter" x-data="formSetup()" x-on:submit.prevent="getResults($el)" class="space-y-600" }}
+            {{ form:create handle="newsletter" x-data="formSetup()" x-on:submit.prevent="getResults($el)" class="space-y-600" }}
+            {{ if {form:success} }}
+                <p>Tak</p>
+            {{ else }}
+                <p>Ævv</p>
+            {{ /if }}
                 <div class="space-y-300">
                     <input class="!rounded-full text-center" type="email" name="email" value="{{ old:email }}" placeholder="Indtast din e-mail adresse">
                     {{ partial:components/btn as="button" class="" linkText="Ja tak tilmeld mig" class="w-full" }}
