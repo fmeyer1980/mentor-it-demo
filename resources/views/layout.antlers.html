@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ partial:meta_info }}
-        {{ vite src="resources/css/tailwind.css|resources/js/site.js" }}
-        {{# <link rel="stylesheet" href="/build/assets/tailwind.bb781cfd.css" /><script type="module" src="/build/assets/site.ad5146e2.js"></script> #}}
+        {{# {{ vite src="resources/css/tailwind.css|resources/js/site.js" }} #}}
+        <link rel="stylesheet" href="/build/assets/tailwind.bb781cfd.css" /><script type="module" src="/build/assets/site.ad5146e2.js"></script>
     </head>
     <body class="font-base leading-normal text-dark flex flex-col min-h-screen" x-data="{ showNewsletterModal: false }">
         {{ partial:site_head }}
