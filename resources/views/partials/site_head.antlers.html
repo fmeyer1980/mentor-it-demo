@@ -1,13 +1,16 @@
-<header role="banner" class="mx-gutter md:mx-[5%] py-500 flex gap-gutter items-center justify-end" x-data="{ menuIsOpen: false }" :class="menuIsOpen ? 'text-light' : 'text-current'">
-    <a class="h-full mr-auto z-[99]" href="/" aria-label="Gå til {{ site_settings:name }}">{{ svg src="logo" class="h-800" aria-hidden="true" }}</a>
-    <div class="space-x-400 hidden md:flex">
-        {{ partial:components/btn linkText="IT-outsourcing" linkUrl="/" linkType="stroke-dark" class="text-300 py-[.8em]" }}
-        {{ partial:components/btn linkText="Remote Support" linkUrl="/" linkType="solid-dark" class="text-300 py-[.8em]" }}
+<header role="banner" class=" relative mx-gutter md:mx-[5%] py-500 flex gap-gutter items-center justify-end" x-data="{ menuIsOpen: false, searchIsOpen: false }" :class="menuIsOpen ? 'text-light' : 'text-current'">
+    <a class="h-full mr-auto " :class="menuIsOpen ? 'z-[99]' : ''" href="/" aria-label="Gå til {{ site_settings:name }}">{{ svg src="logo" class="h-800" aria-hidden="true" }}</a>
+    <div class="md:relative gap-400 md:flex">
+        {{ partial:components/btn linkText="IT-outsourcing" linkUrl="/" linkType="stroke-dark" class="text-300 h-[3em] hidden md:flex" }}
+        {{ partial:components/btn linkText="Remote Support" linkUrl="/" linkType="solid-dark" class="text-300 h-[3em] hidden md:flex" }}
+        <form x-show="searchIsOpen" @click.outside="searchIsOpen = false" class="absolute bottom-0 left-0 h-900 translate-y-900 -translate-x-1/2 md:inset-0 z-[199] bg-light ml-[50%] w-screen md:w-auto md:ml-auto md:translate-x-0 md:translate-y-0 md:bg-white md:h-full" action="/search">
+            <input x-ref="searchInput" class="w-full h-full bg-transparent border-0 md:border-2 md:border-dark md:rounded-full focus:ring-0 focus:border-dark px-[1.5em]" type="search" name="q" value="{{ get:q }}" placeholder="Søg på Mentor IT..." autocomplete="off" autofocus>
+        </form>
     </div>
     <a aria-label="Kontakt os på {{ site_settings:phone }}" href="tel:{{ site_settings:phone }}">{{ svg src="phone" class="h-600" }}</a>
-    <button aria-label="Søge knap">{{ svg src="loop" class="h-600" }}</button>
-    <button aria-label="Primære navigation knap" class="site-head__dropdown-nav z-[99]" :class="menuIsOpen ? 'is-open' : ''" @click="menuIsOpen = !menuIsOpen" @keydown.escape="isOpen = false"></button>
-    <div class="fixed inset-0 bg-dark z-50 flex justify-center pt-xxl md:pt-xl text-center" 
+    <button aria-label="Søge knap" @click="searchIsOpen = !searchIsOpen, $nextTick(() => $refs.searchInput.focus())" @keydown.escape="searchIsOpen = false">{{ svg src="loop" class="h-600" }}</button>
+    <button aria-label="Primære navigation knap" class="site-head__dropdown-nav" :class="menuIsOpen ? 'is-open z-[99]' : ''" @click="menuIsOpen = !menuIsOpen" @keydown.escape="isOpen = false"></button>
+    <div class="fixed inset-0 bg-dark z-[90] flex justify-center pt-xxl md:pt-xl text-center" 
     x-cloak 
     x-show="menuIsOpen"
     x-transition:enter="transition ease-out duration-100"
@@ -19,4 +22,5 @@
     >
         {{ partial:main_nav }}
     </div>
+    
 </header>

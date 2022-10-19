@@ -7,6 +7,7 @@
 @import './btn';
 @import './type';
 @import './page-content';
+@import './animations';
 
 @import './blocks/intro';
 @import './blocks/banner';

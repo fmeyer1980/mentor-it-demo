@@ -1,0 +1,38 @@
+<div x-cloak x-show="showNewsletterModal"  @keyup.escape="showNewsletterModal = false" @click="showNewsletterModal = false" class="fixed inset-0 bg-black/95 text-light-glare z-[99] grid place-items-center rounded-md overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="dialog_title"
+x-transition:enter="transition ease-out duration-100"
+x-transition:enter-start="opacity-0 -translate-y-400"
+x-transition:enter-end="opacity-100 translate-y-0"
+x-transition:leave="transition ease-in duration-100"
+x-transition:leave-start="opacity-100 translate-y-0"
+x-transition:leave-end="opacity-0 -translate-y-400"
+
+>
+    <div class="w-[90%] max-w-3xl bg-dark rounded-md overflow-hidden" @click.stop>
+        <div class="flex items-center text-700 justify-between bg-dark-shade/70 p-gutter">
+            <p id="dialog_title" class="font-bold leading-flat">Tilmeld dig nyhedsbrev</p>
+            <button @click="showNewsletterModal = false" class="h-[.7em]" x-ref="closeBtn">
+                {{ svg src="close" class="fill-current h-full" aria-hidden="true" }}
+            </button>
+        </div>
+        <div class="p-gutter space-y-600">
+            <p class="h4 max-w-[60ch]">Få gode råd og vejledning til strategisk IT og gode IT-oplevelser, som højner brugeroplevelsen og øger sikkerheden. Blot ved at tilmelde dig vores nyhedsbrev.</p>
+            {{ form:create in="newsletter" class="space-y-600" redirect="/tak" }}
+                <div class="space-y-300">
+                    <input class="!rounded-full text-center" type="email" name="email" value="{{ old:email }}" placeholder="Indtast din e-mail adresse">
+                    {{ partial:components/btn as="button" class="" linkText="Ja tak tilmeld mig" class="w-full" }}
+                </div>
+                <div class="flex space-x-3">
+                    <input class=" focus:ring-primary focus:bg-primary" type="checkbox" required name="confirm">
+                    <p class="text-xxs">Ved at takke ja,  giver du automatisk samtykke til, at vi må benytte din e-mail adresse til at fremsende vores nyhedsbrev. Din e-mailadresse vil blive behandlet fortroligt og så længe, det er i din interesse. Såfremt du ønsker at afmelde dig vores nyhedsbrev, kan du gøre dette nederst i vort nyhedsbrev, og din e-mailadresse vil ikke længere være registreret hos os.</p>
+                </div>
+                {{ if errors }}
+                    <div class="bg-red-300 text-white p-2">
+                        {{ errors }}
+                            {{ value }}<br>
+                        {{ /errors }}
+                    </div>
+                {{ /if }}
+            {{ /form:create }}
+        </div>
+    </div>
+</div>

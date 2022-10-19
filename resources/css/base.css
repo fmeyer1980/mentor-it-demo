@@ -19,7 +19,7 @@ body {
 }
 
 input[type=text], input[type=email], input[type=tel], textarea{
-    @apply !bg-light border-none ring-dark/5 w-full !py-[1em] !px-[1.2em] !text-xs !font-normal !rounded-sm focus:ring-1 focus:!ring-secondary placeholder:text-dark/70 text-dark
+    @apply bg-light border-none ring-dark/5 w-full py-[1em] px-[1.5em] text-[15px] !font-normal rounded-sm focus:ring-1 focus:ring-secondary placeholder:text-dark/90 text-dark;
 }
 
 label{
@@ -64,5 +64,18 @@ a[aria-current='page']::after {
 }
 
 .is-open{
-    @apply before:rotate-45 before:top-[50%] after:-rotate-45 after:top-[50%] after:w-[80%] before:w-[80%]
+    @apply before:rotate-45 before:top-[50%] after:-rotate-45 after:top-[50%] after:w-[80%] before:w-[80%];
+}
+
+
+.footer__booble--large{
+    @apply bg-dark w-full aspect-square rounded-full absolute -bottom-[89%] z-10;
+    animation: puls 6s ease-in-out infinite,
+    footer-bubble-ani-large .8s backwards cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.footer__booble--small{
+    @apply bg-primary w-[31%] aspect-square rounded-full absolute -bottom-[25%] right-[5%];
+    animation: puls-large 6s ease-in-out infinite,
+    footer-bubble-ani-small .8s backwards cubic-bezier(0.83, 0, 0.17, 1) .2s;
 }

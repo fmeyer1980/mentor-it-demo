@@ -1,0 +1,61 @@
+title: Banner
+fields:
+  -
+    handle: text
+    field:
+      collapse: false
+      always_show_set_button: false
+      previews: true
+      buttons:
+        - h1
+        - bold
+        - italic
+        - removeformat
+        - anchor
+        - brand_color
+        - large_text
+        - title
+        - horizontalrule
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: false
+      display: Text
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: background_color
+    field:
+      options:
+        bg-dark: Dark
+        bg-primary: Primary
+        bg-light-glare: Light
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: bg-dark
+      display: 'Background color'
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    import: links

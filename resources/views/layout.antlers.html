@@ -6,14 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ partial:meta_info }}
         {{ vite src="resources/css/tailwind.css|resources/js/site.js" }}
-        {{# <link rel="stylesheet" href="/build/assets/tailwind.76d6ce5c.css" /><script type="module" src="/build/assets/site.7ab07cc6.js"></script> #}}
+        {{# <link rel="stylesheet" href="/build/assets/tailwind.bb781cfd.css" /><script type="module" src="/build/assets/site.ad5146e2.js"></script> #}}
     </head>
-    <body class="font-base leading-normal text-dark">
+    <body class="font-base leading-normal text-dark flex flex-col min-h-screen" x-data="{ showNewsletterModal: false }">
         {{ partial:site_head }}
-        <main>
+        <div class="fixed top-[15%] left-300 md:left-500 z-50 flex flex-col items-start gap-100">
+            {{ partial:components/btn linkUrl="/" linkType="solid-light" :linkText="site_settings:phone" linkIcon="phone" iconLeft="true" iconSize="lg" class="shadow-lg text-300 pl-[1em] gap-[.8em]" }}
+            {{ partial:components/btn linkUrl="/" linkType="solid-light" linkText="Prisberegner" linkIcon="calc" iconLeft="true" iconSize="xl" class="shadow-lg text-300 pl-[1em] gap-[.8em]" }}
+            {{ partial:components/btn as="button" linkUrl="/" linkType="solid-light" linkText="Nyheder på mail" linkIcon="email" iconLeft="true" iconSize="lg" xData="showNewsletterModal" class="shadow-lg text-300 pl-[1em] gap-[.8em]" }}
+        </div>
+        <main class="grow">
             {{ template_content }}
         </main>
         {{ partial:site_foot }}
+        {{ partial:newsletter_popup }}
         <script src="/js/quicklink.js"></script>
         <script>
             window.addEventListener('load', () => {

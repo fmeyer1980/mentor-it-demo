@@ -1,6 +1,15 @@
-<{{ as or 'a' }} 
+{{ size = switch(
+    (iconSize == 'xl') => "h-[1.4em]",
+    (iconSize == 'lg') => "h-[1.2em]",
+    (iconSize == 'md') => "h-[1em]",
+    (iconSize == 'sm') => "h-[0.8em]",
+    () => "h-[.7em]"
+) }}
+
+<{{ as or 'a' }}
+    {{ if as == "button" and xData }}@click="{{ xData }} = true, $nextTick(() => $refs.closeBtn.focus())"{{ /if }}
     class="btn {{ class }}" 
     data-type="{{ linkType or 'solid-primary' }}" {{ if linkUrl }}
     href="{{ linkUrl or '/' }}"{{ /if }}>
-    <span>{{ linkText or 'Læs mere' }}</span>  {{ svg src="{{ linkIcon }}" class="h-[.9em] w-auto" aria-hidden="true" }}
+    <span class="{{ iconLeft == true ? 'order-2' : 'order-1' }} leading-none">{{ linkText or 'Læs mere' }}</span>{{ svg src="{{ linkIcon }}" class=" translate-y-[.06em] {{ size }} {{ iconLeft == true ? 'order-1' : 'order-2' }}" aria-hidden="true" }}
 </{{ as or 'a' }}>

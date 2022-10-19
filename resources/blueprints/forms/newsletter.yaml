@@ -1,0 +1,27 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: checkboxes_field
+        field:
+          inline: false
+          display: 'Checkboxes Field'
+          type: checkboxes
+          icon: checkboxes
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false

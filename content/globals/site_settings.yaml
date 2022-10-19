@@ -3,3 +3,26 @@ data:
   name: Mentor-it
   phone: '+45 70 122 123'
   email: info@mentor-it.dk
+  footer_links:
+    - 4be70bde-1c91-4ee5-9232-ac6a212ce087
+    - 61a50f71-28f2-481d-a849-960d4d21ab55
+    - 8dfc0c9f-feac-41ec-b275-907faa6e823d
+    - 473316ce-3f77-4b82-8e5e-109600277400
+    - 17959fa1-b299-4ce6-bf67-a0b3846329ab
+    - c96558cd-ec96-4186-82c2-c7750c983988
+  footer_socialmedia_links:
+    -
+      handle: /
+      prefix: 'https://www.facebook.com/'
+      type: facebook
+      enabled: true
+    -
+      handle: /
+      prefix: 'https://www.linkedin.com/'
+      type: linkedin
+      enabled: true
+    -
+      handle: /
+      prefix: 'https://twitter.com/'
+      type: twitter
+      enabled: true

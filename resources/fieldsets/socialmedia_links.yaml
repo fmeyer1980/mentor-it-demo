@@ -1,0 +1,110 @@
+title: 'Socialmedia links'
+fields:
+  -
+    handle: socialmedia_links
+    field:
+      collapse: false
+      previews: true
+      sets:
+        facebook:
+          display: Facebook
+          fields:
+            -
+              handle: handle
+              field:
+                input_type: url
+                prepend: 'https://www.facebook.com/'
+                antlers: false
+                display: Handle
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+            -
+              handle: prefix
+              field:
+                default: 'https://www.facebook.com/'
+                type: hidden
+                icon: hidden
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+        instagram:
+          display: Instagram
+          fields:
+            -
+              handle: handle
+              field:
+                input_type: url
+                prepend: 'https://www.instagram.com/'
+                antlers: false
+                display: Handle
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+            -
+              handle: prefix
+              field:
+                default: 'https://www.instagram.com/'
+                type: hidden
+                icon: hidden
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+        linkedin:
+          display: Linkedin
+          fields:
+            -
+              handle: handle
+              field:
+                input_type: url
+                antlers: false
+                display: Handle
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                prepend: 'https://www.linkedin.com/'
+            -
+              handle: prefix
+              field:
+                default: 'https://www.linkedin.com/'
+                type: hidden
+                icon: hidden
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+        twitter:
+          display: Twitter
+          fields:
+            -
+              handle: handle
+              field:
+                input_type: url
+                antlers: false
+                display: Handle
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                prepend: 'https://twitter.com/'
+            -
+              handle: prefix
+              field:
+                default: 'https://twitter.com/'
+                type: hidden
+                icon: hidden
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+      display: 'Socialmedia links'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible

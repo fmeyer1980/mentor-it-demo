@@ -4,38 +4,63 @@ sections:
     display: Main
     fields:
       -
-        handle: headline
+        handle: benner_section
         field:
-          input_type: text
-          antlers: false
-          display: Headline
-          type: text
-          icon: text
+          display: 'Benner section'
+          type: section
+          icon: section
           listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
       -
-        handle: summary
+        import: banner
+        prefix: banner_
+      -
+        import: page_sections
+      -
+        handle: ttt
         field:
+          collapse: false
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+            - h4
+            - small
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
           antlers: false
-          display: Summary
-          type: textarea
-          icon: textarea
+          remove_empty_nodes: false
+          display: ttt
+          type: bard
+          icon: bard
           listable: hidden
           instructions_position: above
           visibility: visible
           always_save: false
+          container: assets
   sidebar:
     display: Sidebar
     fields:
-      -
-        handle: title
-        field:
-          type: text
-          required: true
-          validate:
-            - required
       -
         handle: slug
         field:
@@ -50,6 +75,36 @@ sections:
           max_items: 1
           listable: false
           localizable: true
+      -
+        handle: banner_section
+        field:
+          display: 'Banner section'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: summary
+        field:
+          antlers: false
+          display: Summary
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        import: links
   seo:
     display: Seo
     fields:

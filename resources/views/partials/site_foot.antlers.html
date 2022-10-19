@@ -1,3 +1,26 @@
-{{# <footer class="py-900 grid place-items-center text-900 font-bold">
-   
-</footer> #}}
+<footer class="relative overflow-hidden" x-data="{ shown: false }" x-intersect="shown = true">
+    <div class="mx-gutter md:mx-[5%] pb-xxl pt-lg grid grid-cols-1 gap-900 relative z-30 md:grid-cols-3 md:pb-lg">
+        <nav aria-label="Footer navigation">
+            <ul class="text-center md:text-left grid md:grid-cols-2 gap-x-gutter gap-y-2 [&>li>a]:text-300 [&>li>a]:decoration-primary [&>li>a]:decoration-2 [&>li>a]:underline-offset-[5px] [&>li>a:hover]:underline">
+                {{ site_settings:footer_links }}
+                    <li><a href="{{ url }}">{{ title }}</a></li>
+                {{ /site_settings:footer_links }}
+            </ul>
+        </nav>
+        <div class="flex justify-center">
+            <a href="">{{ svg src="logo" class="h-900 md:h-850" }}</a>
+        </div>
+        <ul class="flex gap-[.6em] justify-center md:justify-end text-300">
+            {{ site_settings:footer_socialmedia_links }}
+            <li><a class=" border border-current rounded-full w-[2.2em] h-[2.2em] grid place-items-center hover:bg-dark hover:text-light-glare hover:border-dark transition-colors" href="">{{ svg src="socialmedia/{type}" class="fill-current h-1/2" }}</a></li>
+            {{ /site_settings:footer_socialmedia_links }}
+        </ul>
+    </div>
+    <div class="w-[70%] max-w-[40rem] aspect-square absolute bottom-0 left-1/2 -translate-x-1/2 z-20">
+        <div class="footer__booble--large" x-show="shown" x-transition></div>
+        <div class="footer__booble--small" x-show="shown" x-transition></div>
+    </div>
+
+    {{# {{ svg src="pattern" class=" absolute bottom-0 md:top-0 right-0 w-[37%] z-[-1]" }} #}}
+    {{# {{ svg src="pattern" class=" absolute bottom-0 md:top-0 right-0 w-[36%] md:w-auto md:h-[100%] lg:h-[120%] z-[-1] -scale-y-100 lg:-translate-y-[10%]" }} #}}
+</footer>

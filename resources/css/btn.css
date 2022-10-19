@@ -1,5 +1,5 @@
 .btn {
-  @apply py-[1.2em] px-[2.2em] text-100 font-secondary font-bold inline-flex items-center rounded-full relative leading-none space-x-[.8em] transition-colors justify-center;
+  @apply h-[3.2em] px-[2.2em] text-300 font-secondary font-bold inline-flex items-center rounded-full relative leading-none gap-[.5em] transition-colors justify-center;
 }
 
 .btn[data-type='default'] {
@@ -23,7 +23,11 @@
 }
 
 .btn[data-type='solid-light'] {
-  @apply bg-light text-dark-shade;
+  @apply bg-light-glare text-dark;
+}
+
+.btn[data-type='solid-light']:hover {
+  @apply bg-dark text-light-glare;
 }
 
 .btn[data-type='stroke-primary'] {

@@ -38,3 +38,21 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+  footer:
+    display: Footer
+    fields:
+      -
+        handle: footer_links
+        field:
+          mode: default
+          create: true
+          display: 'Footer links'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        import: socialmedia_links
+        prefix: footer_
