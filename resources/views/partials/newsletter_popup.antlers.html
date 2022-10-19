@@ -5,8 +5,8 @@ x-transition:enter-end="opacity-100 translate-y-0"
 x-transition:leave="transition ease-in duration-100"
 x-transition:leave-start="opacity-100 translate-y-0"
 x-transition:leave-end="opacity-0 -translate-y-400"
-
 >
+{{ dynamic_token }}
     <div class="w-[90%] max-w-3xl bg-dark rounded-md overflow-hidden" @click.stop>
         <div class="flex items-center text-700 justify-between bg-dark-shade/70 p-gutter">
             <p id="dialog_title" class="font-bold leading-flat">Tilmeld dig nyhedsbrev</p>

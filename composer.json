@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "statamic/cms": "3.3.45",
-        "statamic/ssg": "^1.2"
+        "statamic/ssg": "^1.2",
+        "webographen/statamic-dynamic-token": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
