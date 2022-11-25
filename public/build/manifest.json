@@ -8,12 +8,12 @@
     "src": "resources/fonts/Dosis-Regular.woff2"
   },
   "resources/js/site.js": {
-    "file": "assets/site.ad5146e2.js",
+    "file": "assets/site.1f51f7e2.js",
     "src": "resources/js/site.js",
     "isEntry": true
   },
   "resources/css/tailwind.css": {
-    "file": "assets/tailwind.bb781cfd.css",
+    "file": "assets/tailwind.18f22b46.css",
     "src": "resources/css/tailwind.css",
     "isEntry": true
   }
